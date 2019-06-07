@@ -3,14 +3,14 @@ export const userServices = {
     login
 };
 
-function login({username, password}) {
+async function login({ username, password }) {
     const options = {
         ...Api.postOptions,
         body: JSON.stringify({ userName: username, password })
     };
-    return fetch(Api.apiBaseUrl + Api.userLogin, options)
-        .then(handleResponse)
-        .then(res => res )
+    const response = await fetch(Api.apiBaseUrl + Api.userLogin, options);
+    const res = await handleResponse(response);
+    return res;
 }
 
 function handleResponse(response) {
