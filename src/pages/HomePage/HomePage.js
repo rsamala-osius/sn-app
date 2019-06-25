@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-class HomePage extends Component{
+class HomePage extends Component {
 
   render() {
     return (
